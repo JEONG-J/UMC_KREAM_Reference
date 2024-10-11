@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4827C8B02CB9581500129116 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827C8A22CB9581500129116 /* MainTabBarController.swift */; };
 		488E505D2CB92F9D001C5D1E /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 488E505C2CB92F9D001C5D1E /* Documentation.docc */; };
 		48B730452CB4E602001BDB6E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 48B730442CB4E602001BDB6E /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4827C8A22CB9581500129116 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		488E505C2CB92F9D001C5D1E /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		48CCAF592CA1359B00C9ACD2 /* UMC_KREAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UMC_KREAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CCAF6A2CA1359C00C9ACD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				48CCAF6A2CA1359C00C9ACD2 /* Info.plist */,
 				488C338B2CB7D369003999D1 /* Resouces */,
 				488C336F2CB7D34A003999D1 /* Presentation */,
+				4827C8A22CB9581500129116 /* MainTabBarController.swift */,
 				488C336D2CB7D32A003999D1 /* App */,
 				48B730382CB4E3F4001BDB6E /* Data */,
 				488E505C2CB92F9D001C5D1E /* Documentation.docc */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4827C8B02CB9581500129116 /* MainTabBarController.swift in Sources */,
 				488E505D2CB92F9D001C5D1E /* Documentation.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

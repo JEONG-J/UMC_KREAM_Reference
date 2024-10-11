@@ -58,6 +58,7 @@ UMC (University Mobile Club) 1주차부터 10주차까지의 참고용 과제 �
     * SnapKit 5.7.1: 오토 레이아웃을 코드로 쉽게 작성할 수 있게 도와주는 라이브러리로, UI 요소의 레이아웃을 정의하는 데 사용됩니다.
 
 ## Tree 구조
+```
 ├── UMC_KREAM
 │   ├── App
 │   │   ├── AppDelegate.swift
@@ -185,3 +186,4 @@ UMC (University Mobile Club) 1주차부터 10주차까지의 참고용 과제 �
         └── jeong-uichan.xcuserdatad
             └── xcschemes
                 └── xcschememanagement.plist
+```

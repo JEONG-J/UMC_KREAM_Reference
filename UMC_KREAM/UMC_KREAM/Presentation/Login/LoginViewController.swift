@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 9/23/24.
+//  Created by UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 9/23/24.
 //
 
 import UIKit

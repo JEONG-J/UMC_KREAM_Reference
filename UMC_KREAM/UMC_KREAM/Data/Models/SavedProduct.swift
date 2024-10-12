@@ -2,7 +2,7 @@
 //  SavedProduct.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 10/11/24.
+//  Created by UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 10/11/24.
 //
 
 import Foundation

@@ -105,8 +105,7 @@ class SavedTableViewCell: UITableViewCell {
     private func constraints() {
         productImageView.snp.makeConstraints {
             $0.left.top.equalToSuperview().offset(13)
-            $0.bottom.equalToSuperview().offset(-21)
-            $0.width.height.equalTo(72)
+            $0.height.width.equalTo(72)
         }
         
         labelStackView.snp.makeConstraints {

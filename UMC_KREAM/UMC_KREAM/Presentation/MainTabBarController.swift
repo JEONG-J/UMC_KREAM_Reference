@@ -20,6 +20,8 @@ class MainTabBarController: UITabBarController {
     
     /// 탭바 설정 함수(피그마 디자인에 맞춰 5개 구성)
     private func setupTabBar() {
+        self.tabBar.backgroundColor = .white
+        self.tabBar.isTranslucent = false
         
         let homeVC = UINavigationController(rootViewController: HomeViewController())
         homeVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Home"), tag: 1)

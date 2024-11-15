@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+/// 컬렉션 뷰 커스텀 푸터 정의
 class SectionSeparatorFooter: UICollectionReusableView {
     
     static let identifier: String = "SectionSeparatorFooter"
@@ -26,6 +27,7 @@ class SectionSeparatorFooter: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// 구분선 생성
     lazy var separator: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1)

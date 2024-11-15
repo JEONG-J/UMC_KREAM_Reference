@@ -7,10 +7,13 @@
 
 import Foundation
 
+/// 상품 구매 뷰의 사이즈 선택 데이터
 struct SizeModel {
     var size: String
     var price: String
 }
+
+// MARK: - Dummy Data
 
 final class SizeData {
     static let sizeData: [SizeModel] = [

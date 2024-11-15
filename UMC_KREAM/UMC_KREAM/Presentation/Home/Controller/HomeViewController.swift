@@ -28,8 +28,11 @@ class HomeViewController: UIViewController {
     }()
 }
 
+// MARK: Extension
+
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
+    /// 섹션 갯수
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
@@ -84,10 +87,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
@@ -97,7 +96,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
 }
 
+
 extension HomeViewController {
+    /// 헤더와 푸터 추가 헤더의 경의 특정 섹션에 대해서만 추가
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionFooter:
@@ -125,6 +126,7 @@ extension HomeViewController {
         }
     }
     
+    /// 약간의 이스터 에그?? 마지막 섹션의 첫번째 셀을 누르면 6주차의 구매 뷰를 불러온다.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 3 && indexPath.item == 0{
             let newViewController = PurchaseViewController()

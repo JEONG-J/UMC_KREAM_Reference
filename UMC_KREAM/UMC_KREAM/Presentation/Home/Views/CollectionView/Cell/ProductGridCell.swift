@@ -13,6 +13,8 @@ class ProductGridCell: BaseCollectionCell {
     
     static let identifier: String = "ProductGridCell"
     
+    // MARK: - Init
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addStackView()
@@ -35,6 +37,7 @@ class ProductGridCell: BaseCollectionCell {
         priceLabel.text = nil
         priceDescription.text = nil
     }
+    // MARK: - Property
     
     /// 상품 구매 수 라벨
     private lazy var purchaseCount: UILabel = makeLabel(font: UIFont.systemFont(ofSize: 10, weight: .regular), UIColor(red: 0.251, green: 0.272, blue: 0.294, alpha: 1))
@@ -78,6 +81,9 @@ class ProductGridCell: BaseCollectionCell {
     
     //MARK: - Function
     
+    /// 셀 데이터에서 클릭되었는가 안되었는가 값 전달받아 빈 태그 이미지 or 속이 찬 태그 이미지인지 구분
+    /// - Parameter isMark: true flase로 전달
+    /// - Returns: 빈 태그 이미지 or 속이 찬 태그 이미지 반환
     private func setTagButtonImage(isMark: Bool) -> UIImage {
         if isMark {
             return UIImage(named: "notTag.pdf") ?? UIImage()
@@ -86,19 +92,20 @@ class ProductGridCell: BaseCollectionCell {
         }
     }
     
+    /// 스택 뷰에 컴포넌트 추가
     private func addStackView() {
         [self.priceLabel, self.priceDescription].forEach{ priceTitleStack.addArrangedSubview($0) }
         [self.titleText, self.subTitleText].forEach{ productTitleStack.addArrangedSubview($0) }
     }
     
+    /// 컴포넌트 추가
     private func addComponents() {
         [self.imageView, self.purchaseCount, self.tagButton].forEach{ self.imageBackground.addSubview($0) }
         [productTitleStack, priceTitleStack, imageBackground].forEach{ self.addSubview($0) }
     }
     
+    /// 제약 조건 설정
     private func constaints() {
-        /* 상품 배경에 속해 있는 데이터 */
-        
         imageBackground.snp.makeConstraints {
             $0.top.equalToSuperview().offset(0)
             $0.left.right.equalToSuperview().offset(0)
@@ -151,6 +158,8 @@ class ProductGridCell: BaseCollectionCell {
         }
     }
     
+    /// RequiredCellProtocol 상속을 받는 모델 값을 파라미터로 전달하여 해당 셀의 값 넣어준다.
+    /// - Parameter model: RequiredCellProtocol을 상속받는 모델
     override func configure(model: any RequiredCellProtocol) {
         guard let productGridModel = model as? ProductGridModel else { return }
         

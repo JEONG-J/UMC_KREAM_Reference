@@ -10,6 +10,7 @@ import UIKit
 /// 여러 셀 중 가장 기본이 되는 컴포넌트 셀
 class BaseCollectionCell: UICollectionViewCell, ProductCellProtocol {
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -26,6 +27,8 @@ class BaseCollectionCell: UICollectionViewCell, ProductCellProtocol {
         
         priceLabel.text = nil
     }
+    
+    //MARK: - Property
     
     /// 상품 이미지
     lazy var imageView: UIImageView = {
@@ -76,6 +79,8 @@ class BaseCollectionCell: UICollectionViewCell, ProductCellProtocol {
         return stack
     }
     
+    /// 이미지의 cornerRadius를 수정할 경우 사용한다
+    /// - Parameter cornerRadius: 원하는 값 넣기
     func imageViewCorner(cornerRadius: CGFloat) {
         self.imageView.layer.cornerRadius = cornerRadius
     }

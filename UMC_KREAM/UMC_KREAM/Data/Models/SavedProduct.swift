@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Saved 탭 데이터
 struct SavedProduct {
     let imageName: String
     let description: Description
@@ -17,6 +18,8 @@ struct Description {
     let title: String
     let subTitle: String
 }
+
+// MARK: - Dummy Data
 
 final class SavedProductData {
     static let datalist: [SavedProduct] = [

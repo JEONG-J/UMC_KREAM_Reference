@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// 홈 뷰컨트롤러 내부 세그먼트 컨트롤러
 class HomeSegmentControl: UISegmentedControl {
     
+    /// 세그먼트 컨트롤러가 가지는 하단 막대 커스텀을 위한 UIView 생성
     let selectedIndicator = UIView()
     
     // MARK: - Init
@@ -57,6 +59,9 @@ class HomeSegmentControl: UISegmentedControl {
         /* 세그먼트 버튼 클릭 시 변화 */
         addTarget(self, action: #selector(segmentChange), for: .valueChanged)
     }
+    
+    // MARK: - MakeFunction
+    
     /// 세그먼트 글자 커스텀 지정
     /// - Parameter weight: 굵기 조정
     /// - Returns: 지정된 폰트 스타일 반환
@@ -69,6 +74,7 @@ class HomeSegmentControl: UISegmentedControl {
 }
 
 //MARK: - SegmentExtension
+
 extension HomeSegmentControl {
     // MARK: - IndicatorFunction
     
@@ -78,7 +84,11 @@ extension HomeSegmentControl {
         selectedSegmentIndex = 0
         addSubview(selectedIndicator)
         
-        
+        /*
+         처음 등장하는 시점에서는 애니메이션이 필요가 없습니다.
+         뷰 컨트롤러가 바로 띄워지는 시점이기 때문에 세그먼트가 선택된 상태로 바로 등장해야 합니다.
+         그래서 animation값은 false로 지정합니다.
+         */
         updateIndicatorPosition(animated: false)
     }
     
@@ -92,6 +102,7 @@ extension HomeSegmentControl {
         
         /* 선택된 세그먼트의 텍스트 길이에 맞춰 막대의 가로 길이 설정 */
         let indicatorWidth = calculateLabelWidth(for: selectedSegmentIndex)
+        
         let indicatorPositionX = segmentWidth * CGFloat(selectedSegmentIndex) + (segmentWidth - indicatorWidth) / 2 - leftOffset
         let indicatorFrame = CGRect(x: indicatorPositionX, y: bounds.height - 3, width: indicatorWidth, height: 2)
         

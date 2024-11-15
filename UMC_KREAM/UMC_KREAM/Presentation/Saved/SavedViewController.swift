@@ -25,6 +25,9 @@ class SavedViewController: UIViewController {
     }()
 }
 
+//MARK: - Extension
+
+/* 테이블 뷰 내부 속성 조정 */
 extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

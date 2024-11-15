@@ -7,10 +7,13 @@
 
 import Foundation
 
+/// 상품 구매 뷰, 점퍼 데이터
 struct PurchaseModel: RequiredCellProtocol {
     var imageView: String
     var productName: String
 }
+
+// MARK: - DummyData
 
 final class PurchaseData {
     static let purchaseData: [PurchaseModel] = [

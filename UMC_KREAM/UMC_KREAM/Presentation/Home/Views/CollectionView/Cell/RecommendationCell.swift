@@ -13,6 +13,8 @@ class RecommendationCell: BaseCollectionCell {
     
     static let identifier: String = "RecommendationCell"
     
+    // MARK: - Init
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         changeFont()
@@ -29,15 +31,19 @@ class RecommendationCell: BaseCollectionCell {
         self.titleText.text = nil
     }
     
+    //MARK: - Function
     
+    /// BaseCollectionCell에서의 폰트를 재수정
     private func changeFont() {
         self.titleText.font = UIFont.systemFont(ofSize: 11.5, weight: .regular)
     }
     
+    /// 컴포넌트 추가
     private func addComponents() {
         [self.imageView, self.titleText].forEach { self.addSubview($0) }
     }
     
+    /// 제약 조건 설정
     private func constraints() {
         self.imageView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -52,6 +58,8 @@ class RecommendationCell: BaseCollectionCell {
         }
     }
     
+    /// RequiredCellProtocol 상속을 받는 모델 값을 파라미터로 전달하여 해당 셀의 값 넣어준다.
+    /// - Parameter model: RequiredCellProtocol을 상속받는 모델
     override func configure(model: any RequiredCellProtocol) {
         guard let recommendProductModel = model as? RecommendProductModel else { return }
         

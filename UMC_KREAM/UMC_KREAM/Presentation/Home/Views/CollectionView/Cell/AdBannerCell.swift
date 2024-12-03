@@ -49,6 +49,7 @@ class AdBannerCell: BaseCollectionCell {
     override func configure(model: any RequiredCellProtocol) {
         guard let bannerModel = model as? BannerModel else { return }
         
+        /* KingfisherExtend.swift 파일을 참고해주세요! */
         self.imageView.setImage(from: bannerModel.imageView)
     }
 }

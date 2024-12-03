@@ -2,7 +2,7 @@
 //  HomeCollectionLayout.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 11/13/24.
+//  Created by  UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 11/13/24.
 //
 
 import UIKit
@@ -53,6 +53,7 @@ class HomeCollectionLayout {
         
         /* 섹션 크기를 지정합니다. 섹션은 (헤더 + 셀 부분 + 푸터)을 의미합니다. 하지만 배너에서는 헤더와 푸터가 없기 때문에 자체 사진 크기 즉, 그룹 사이즈가 섹션 사이즈로 값을 가지면 됩니다. */
         let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         return section

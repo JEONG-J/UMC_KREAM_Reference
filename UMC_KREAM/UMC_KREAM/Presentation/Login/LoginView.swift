@@ -60,7 +60,7 @@ class LoginView: UIView {
     }()
     
     /// 카카오 로그인 버튼
-    private lazy var kakaoBtn: UIButton = makeSocialBtn(image: "kakao.pdf", title: "카카오로 로그인")
+    public lazy var kakaoBtn: UIButton = makeSocialBtn(image: "kakao.pdf", title: "카카오로 로그인")
     
     /// 애플 로그인 버튼
     private lazy var appleBtn: UIButton = makeSocialBtn(image: "apple.pdf", title: "Apple로 로그인")

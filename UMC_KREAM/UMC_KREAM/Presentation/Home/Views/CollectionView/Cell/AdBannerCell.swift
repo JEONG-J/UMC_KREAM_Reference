@@ -2,7 +2,7 @@
 //  AdBannerCell.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 11/12/24.
+//  Created by UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 11/12/24.
 //
 
 import UIKit
@@ -49,6 +49,6 @@ class AdBannerCell: BaseCollectionCell {
     override func configure(model: any RequiredCellProtocol) {
         guard let bannerModel = model as? BannerModel else { return }
         
-        self.imageView.image = UIImage(named: bannerModel.imageView)
+        self.imageView.setImage(from: bannerModel.imageView)
     }
 }

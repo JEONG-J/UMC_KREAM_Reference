@@ -42,7 +42,9 @@ class MyPageTopView: UIView {
     /// 유저 이름 라벨
     private lazy var userName: UILabel = {
         let label = UILabel()
-        label.text = "Jeong_iOS"
+        
+        /* 키체인에 저장된 이름을 가져옵니다. */
+        label.text = KeychainManager.standard.loadSession(for: "kreamKeychain")?.nickname
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         label.textColor = .black
         return label

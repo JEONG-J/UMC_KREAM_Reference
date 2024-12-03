@@ -73,5 +73,10 @@ final class HomeCellModel {
     ]
     
     /* 광고 배너 데이터, 1번째 섹션 데이터 */
-    static let bannerData: [BannerModel] = [.init(imageView: "adverImage")]
+    static let bannerData: [BannerModel] = [
+        .init(imageView: "https://www.fetv.co.kr/data/photos/20200206/art_1580956318559_7f9fdb.jpg"),
+        .init(imageView: "https://cf.asiaartistawards.com/news/21/2020/11/2020110902140378831_2.jpg"),
+        .init(imageView: "https://www.artinsight.co.kr/data/tmp/2005/20200527151155_xpbcxpud.jpg"),
+        .init(imageView: "https://image.xportsnews.com/contents/images/upload/article/2023/0201/1675241723170630.jpg")
+    ]
 }

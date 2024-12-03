@@ -2,7 +2,7 @@
 //  ProductGridCell.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 11/12/24.
+//  Created by UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 11/12/24.
 //
 
 import UIKit
@@ -47,7 +47,8 @@ class ProductGridCell: BaseCollectionCell {
     private lazy var imageBackground: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(
-            red: .random(in: 0...1),
+            red
+            : .random(in: 0...1),
             green: .random(in: 0...1),
             blue: .random(in: 0...1),
             alpha: 0.6
@@ -166,7 +167,7 @@ class ProductGridCell: BaseCollectionCell {
         self.imageView.image = UIImage(named: productGridModel.imageView)?.downSample(scale: 0.3)
         self.purchaseCount.text = productGridModel.purchaseCnt
         self.tagButton.setImage(setTagButtonImage(isMark: productGridModel.selectedTag), for: .normal)
-
+        
         self.titleText.text = productGridModel.titleText
         self.subTitleText.text = productGridModel.subTitleText
         

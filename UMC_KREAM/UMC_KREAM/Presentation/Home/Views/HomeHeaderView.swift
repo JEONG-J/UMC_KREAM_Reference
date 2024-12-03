@@ -2,7 +2,7 @@
 //  HomeTitleView.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 11/12/24.
+//  Created by UMC 7기 중앙 iOS 파트장 정의찬/제옹 on 11/12/24.
 //
 
 import UIKit
@@ -22,10 +22,12 @@ import SnapKit
  
  그래서 UIView를 따로 생성해서 거기서 원하는 네비게이션바를 직접 생성후 제약조건을 걸어주셔야 하단 뷰를 스클로해도 계속 고정되어 화면에 보이게 됩니다.
  */
-class HomeHeaderView: UIView {
+class HomeHeaderView: UIView, UISearchBarDelegate {
+    
+    public var onSearchBarTapped: (() -> Void)?
     
     //MARK: - Init
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
@@ -48,6 +50,7 @@ class HomeHeaderView: UIView {
         searchBar.clipsToBounds = true
         searchBar.layer.cornerRadius = 12
         searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
         
         /* 돋보기 아이콘 및 여백 제거 */
         searchBar.searchTextField.leftView = nil
@@ -109,5 +112,9 @@ class HomeHeaderView: UIView {
             $0.width.equalToSuperview()
         }
     }
-
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        onSearchBarTapped?()
+    }
+    
 }

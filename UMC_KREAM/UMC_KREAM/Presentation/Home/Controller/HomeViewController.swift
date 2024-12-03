@@ -24,8 +24,16 @@ class HomeViewController: UIViewController {
         homeView.backgroundColor = .white
         homeView.homeCollectionView.delegate = self
         homeView.homeCollectionView.dataSource = self
+        homeView.homeHeaderView.onSearchBarTapped = { [weak self] in
+            self?.navigateToSearchViewController()
+        }
         return homeView
     }()
+    
+    private func navigateToSearchViewController() {
+           let searchViewController = SearchViewController()
+           navigationController?.pushViewController(searchViewController, animated: true)
+       }
 }
 
 // MARK: Extension

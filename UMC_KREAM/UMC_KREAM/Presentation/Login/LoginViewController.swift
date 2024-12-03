@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     private lazy var loginView: LoginView = {
         let view = LoginView()
         view.loginBtn.addTarget(self, action: #selector(loginFunction), for: .touchUpInside)
+        view.kakaoBtn.addTarget(self, action: #selector(loginKakao), for: .touchUpInside)
         return view
     }()
     
@@ -51,6 +52,23 @@ class LoginViewController: UIViewController {
             newUserInfo.saveUserDefaults()
             print("아이디 비밀번호 새롭게 갱신 및 로그인 성공")
             changeRootView()
+        }
+    }
+    
+    /// 카카오톡 로그인 시도함과 동시에 accessToken과 Nickname을 키체인에 저장합나다. 또한 키체인 저장후 루트뷰를 전환하여 크림앱에 들어갈 수 있도록 합니다.
+    @MainActor
+    @objc private func loginKakao() {
+        Task {
+            do {
+                let accessToken = try await KakaoLoginManager.shared.fetchAcessToken()
+                let nickname = try await KakaoLoginManager.shared.fetchUserNickname(accessToken: accessToken)
+                
+                let keychainCheck = KeychainManager.standard.saveSession(UserKeychainInfo(accessToken: accessToken, nickname: nickname), for: "kreamKeychain")
+                
+                print("키체인 저장 확인 : \(keychainCheck)")
+                
+                changeRootView()
+            }
         }
     }
     

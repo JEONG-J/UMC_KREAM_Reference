@@ -2,7 +2,7 @@
 //  PurchaseViewController.swift
 //  UMC_KREAM
 //
-//  Created by 정의찬 on 11/14/24.
+//  Created by 7기 중앙 iOS 파트장 정의찬/제옹 on 11/14/24.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class PurchaseViewController: UIViewController {
     
     let data = PurchaseData.purchaseData
 
-    // MARK: - Init
+    // MARK: - Cycle
     
     /// 네비게이션 적용함수, 메인 사진 클릭시 액션, 구매 버튼 클릭시 뷰 전환 액션 추가
     override func viewDidLoad() {

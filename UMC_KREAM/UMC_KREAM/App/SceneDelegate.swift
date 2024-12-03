@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,6 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        KakaoSDK.initSDK(appKey: SecretClass.shared.kakaoLoginAppkey())
+        
         guard let windowsScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowsScene.coordinateSpace.bounds)
         window?.windowScene = windowsScene
@@ -47,7 +52,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        }
+    }
 
 }
 
